@@ -1,0 +1,11 @@
+﻿src/components/Fitment/FitmentForm.tsx(3,10): error TS1484: 'ViewType' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/Fitment/FitmentForm.tsx(27,45): error TS6133: 'activeView' is declared but its value is never read.
+src/components/Fitment/FitmentForm.tsx(51,7): error TS6133: 'remarkColor' is declared but its value is never read.
+src/components/Fitment/FitmentForm.tsx(52,7): error TS6133: 'remarkBg' is declared but its value is never read.
+src/components/Fitment/FitmentForm.tsx(53,7): error TS6133: 'remarkDot' is declared but its value is never read.
+src/components/Fitment/FitmentRankings.tsx(2,10): error TS1484: 'ViewType' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/Fitment/FitmentRankings.tsx(28,49): error TS6133: 'activeView' is declared but its value is never read.
+src/components/Fitment/FitmentRankings.tsx(129,53): error TS6133: 'index' is declared but its value is never read.
+src/components/Sidebar.tsx(5,3): error TS6133: 'Settings' is declared but its value is never read.
+src/components/Sidebar.tsx(8,3): error TS6133: 'Building' is declared but its value is never read.
+src/components/Sidebar.tsx(19,27): error TS6133: 'activePage' is declared but its value is never read.
