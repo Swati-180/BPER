@@ -53,24 +53,40 @@ export function Step1({ onNext, onPrev }: StepProps) {
           <p className="text-xs font-bold text-corporateBlue tracking-widest uppercase mb-3">Assigned Client</p>
           <div className="flex items-center gap-3">
             <div className="text-slate-400">🏢</div>
-            <p className="font-bold text-lg text-slate-900">Global Asset Management Div.</p>
+            <p className="font-bold text-lg text-slate-900">BPER Bank (Global)</p>
           </div>
         </div>
         <div>
           <p className="text-xs font-bold text-corporateBlue tracking-widest uppercase mb-3">Primary Location</p>
           <div className="flex items-center gap-3">
             <div className="text-slate-400">📍</div>
-            <p className="font-bold text-lg text-slate-900">London - Canary Wharf Hub</p>
+            <p className="font-bold text-lg text-slate-900">Mumbai - BKC Finance Hub</p>
           </div>
         </div>
 
-        {/* ROW 4 */}
+        {/* ROW 4 - NEW FIELDS */}
+        <div>
+          <p className="text-xs font-bold text-corporateBlue tracking-widest uppercase mb-3">Department</p>
+          <div className="flex items-center gap-3">
+            <div className="text-slate-400">🏛️</div>
+            <p className="font-bold text-lg text-slate-900">Finance & Accounting</p>
+          </div>
+        </div>
+        <div>
+          <p className="text-xs font-bold text-corporateBlue tracking-widest uppercase mb-3">Primary Tower / Function</p>
+          <div className="flex items-center gap-3">
+            <div className="text-slate-400">🗼</div>
+            <p className="font-bold text-lg text-slate-900">Accounts Payable</p>
+          </div>
+        </div>
+
+        {/* ROW 5 */}
         <div>
           <p className="text-xs font-bold text-corporateBlue tracking-widest uppercase mb-3">Pay Band / Grade</p>
           <div className="flex items-center gap-3">
             <div className="text-slate-400">📈</div>
             <span className="inline-block bg-slate-100 text-slate-700 text-sm font-bold px-3 py-1.5 rounded uppercase tracking-wide">
-              Grade L8 (Executive)
+              Grade L4 (Professional)
             </span>
           </div>
         </div>

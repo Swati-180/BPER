@@ -1,4 +1,4 @@
-import { Download, Calendar, ArrowUpRight, Minus, ChevronDown } from "lucide-react";
+import { Download, Calendar, ArrowUpRight, Minus, ChevronDown, Users, IndianRupee } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, CartesianGrid } from 'recharts';
 
 const CHART_DATA = [
@@ -9,11 +9,20 @@ const CHART_DATA = [
 ];
 
 const TABLE_DATA = [
-  { id: 1, majorPath: 'Order-to-Cash', subtitle: 'Invoice Generation', process: 'Automated Billing', dept: 'F&A', type: 'Transactional', score: 9.4, consolidate: 'YES' },
-  { id: 2, majorPath: 'Talent Acquisition', subtitle: 'Candidate Screening', process: 'Interview Scheduling', dept: 'HR', type: 'Functional', score: 7.2, consolidate: 'YES' },
-  { id: 3, majorPath: 'Inventory Mgmt', subtitle: 'Stock Auditing', process: 'Cycle Counting', dept: 'SCM', type: 'Analytics', score: 4.8, consolidate: 'NO' },
-  { id: 4, majorPath: 'Fleet Operations', subtitle: 'Route Planning', process: 'Dynamic Dispatch', dept: 'Logistics', type: 'Transactional', score: 8.1, consolidate: 'YES' },
+  { id: 1, majorPath: 'Order-to-Cash', subtitle: 'Invoice Generation', process: 'Automated Billing', dept: 'F&A', type: 'Transactional', score: 9.4, consolidate: 'YES', fte: 12.5 },
+  { id: 2, majorPath: 'Talent Acquisition', subtitle: 'Candidate Screening', process: 'Interview Scheduling', dept: 'HR', type: 'Functional', score: 7.2, consolidate: 'YES', fte: 4.2 },
+  { id: 3, majorPath: 'Inventory Mgmt', subtitle: 'Stock Auditing', process: 'Cycle Counting', dept: 'SCM', type: 'Analytics', score: 4.8, consolidate: 'NO', fte: 8.0 },
+  { id: 4, majorPath: 'Fleet Operations', subtitle: 'Route Planning', process: 'Dynamic Dispatch', dept: 'Logistics', type: 'Transactional', score: 8.1, consolidate: 'YES', fte: 2.1 },
 ];
+
+// FTE savings data (would be fetched from /api/eper/reports/fte-consolidation-summary)
+const FTE_SAVINGS = {
+  currentFTE: 209,
+  estimatedPost: 142,
+  savedFTE: 67,
+  avgSalaryPerFTE: 600000,
+};
+const annualSavingLakhs = ((FTE_SAVINGS.savedFTE * FTE_SAVINGS.avgSalaryPerFTE) / 100000).toFixed(0);
 
 export function ProcessAnalytics() {
   return (
@@ -103,6 +112,58 @@ export function ProcessAnalytics() {
             </div>
             <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Consolidation Rate</p>
             <h3 className="text-3xl font-extrabold text-slate-900 text-corporateBlue">69.3%</h3>
+          </div>
+        </div>
+
+        {/* FTE & Cost Savings Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* FTE Savings Card */}
+          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-1.5 h-full bg-blue-500"></div>
+            <div className="flex items-center gap-2 mb-5">
+              <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center">
+                <Users size={16} className="text-blue-600" />
+              </div>
+              <div>
+                <p className="text-sm font-bold text-slate-900">FTE Savings</p>
+                <p className="text-xs text-slate-400">Headcount Optimization</p>
+              </div>
+            </div>
+            <div className="space-y-3">
+              {[
+                { label: "Current FTE", value: FTE_SAVINGS.currentFTE, bold: false },
+                { label: "Estimated Post", value: FTE_SAVINGS.estimatedPost, bold: false },
+              ].map(r => (
+                <div key={r.label} className="flex justify-between text-sm">
+                  <span className="text-slate-500">{r.label}</span>
+                  <span className="font-semibold text-slate-800">{r.value}</span>
+                </div>
+              ))}
+              <div className="pt-2 border-t border-slate-100 flex justify-between">
+                <span className="text-xs font-extrabold text-slate-500 uppercase tracking-widest">Saved FTE</span>
+                <span className="text-xl font-extrabold text-blue-600">{FTE_SAVINGS.savedFTE}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Cost Savings Card */}
+          <div className="bg-white p-6 rounded-xl border border-amber-200 shadow-sm relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-1.5 h-full bg-amber-500"></div>
+            <div className="flex items-center gap-2 mb-5">
+              <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center">
+                <IndianRupee size={16} className="text-amber-600" />
+              </div>
+              <div>
+                <p className="text-sm font-bold text-slate-900">Cost Savings</p>
+                <p className="text-xs text-slate-400">Annual Projection</p>
+              </div>
+            </div>
+            <p className="text-4xl font-extrabold text-amber-600 mb-1">₹{annualSavingLakhs}L</p>
+            <p className="text-xs text-slate-400 mb-4">Est. Annual Savings</p>
+            <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+              <div className="h-full bg-amber-500 rounded-full w-3/4"></div>
+            </div>
+            <p className="text-[10px] text-slate-400 mt-1">75% Target</p>
           </div>
         </div>
 
@@ -213,6 +274,7 @@ export function ProcessAnalytics() {
                     <th className="py-4 px-6 min-w-[200px]">PROCESS</th>
                     <th className="py-4 px-6 min-w-[120px]">DEPARTMENT</th>
                     <th className="py-4 px-6 min-w-[150px]">TYPE</th>
+                    <th className="py-4 px-6 text-center">FTE</th>
                     <th className="py-4 px-6">SCORE</th>
                     <th className="py-4 px-6">CONSOLIDATE</th>
                   </tr>
@@ -240,6 +302,7 @@ export function ProcessAnalytics() {
                         }`}></div>
                         {row.type}
                       </td>
+                      <td className="py-5 px-6 text-center font-extrabold text-corporateBlue">{row.fte}</td>
                       <td className="py-5 px-6 font-extrabold text-slate-900">{row.score}</td>
                       <td className="py-5 px-6">
                          <span className={`inline-block px-3 py-1 rounded text-[10px] font-bold tracking-widest \${

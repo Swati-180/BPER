@@ -69,6 +69,10 @@ export function AdminUsers() {
               <div className="relative relative">
                 <select className="w-full bg-white border border-transparent p-2.5 rounded-lg text-sm text-slate-700 outline-none focus:ring-2 focus:ring-corporateBlue/20 shadow-sm appearance-none font-medium">
                   <option>All Roles</option>
+                  <option>Admin</option>
+                  <option>Supervisor</option>
+                  <option>Tower Lead</option>
+                  <option>Employee</option>
                 </select>
                 <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
               </div>
@@ -109,85 +113,56 @@ export function AdminUsers() {
               </thead>
               <tbody className="text-sm">
                 
-                {/* Row 1 */}
+                {/* Admin Row */}
                 <tr className="border-b border-slate-50 hover:bg-slate-50/50">
                   <td className="py-5 px-4 font-bold text-corporateBlue">QG-88293</td>
-                  <td className="py-5 px-4">
-                    <div className="flex items-center gap-3">
-                      <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Marcus" className="w-10 h-10 rounded-full border border-slate-200 bg-slate-100" />
-                      <span className="font-bold text-slate-900 leading-tight">Marcus<br/>Chen</span>
-                    </div>
-                  </td>
+                  <td className="py-5 px-4 font-bold text-slate-900 leading-tight">Marcus Chen</td>
                   <td className="py-5 px-4 text-slate-500 font-medium">m.chen@qgtools.com</td>
-                  <td className="py-5 px-4 text-slate-700">BPER<br/>Bank</td>
-                  <td className="py-5 px-4 text-slate-500">
-                    <span className="bg-slate-100 text-[10px] font-bold px-2 py-0.5 rounded border border-slate-200">L4</span>
-                  </td>
+                  <td className="py-5 px-4 text-slate-700">Financial Ops</td>
+                  <td className="py-5 px-4 text-slate-500"><span className="bg-slate-100 text-[10px] font-bold px-2 py-0.5 rounded">L4</span></td>
                   <td className="py-5 px-4">
-                    <span className="bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-100 tracking-wide">Admin</span>
+                    <span className="bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-100 uppercase tracking-wider">Admin</span>
                   </td>
-                  <td className="py-5 px-4">
-                    <div className="flex items-center gap-2">
-                       <div className="w-8 h-4 bg-green-100 border border-green-200 rounded-full relative mr-1 shadow-inner flex items-center">
-                         <div className="w-3 h-3 bg-green-600 rounded-full absolute right-0.5 pointer-events-none"></div>
-                       </div>
-                       <span className="text-[10px] font-extrabold text-green-700 tracking-widest">ACTIVE</span>
-                    </div>
-                  </td>
+                  <td className="py-5 px-4 text-[10px] font-extrabold text-green-700 tracking-widest uppercase">Active</td>
                 </tr>
 
-                {/* Row 2 */}
+                {/* Tower Lead Row */}
                 <tr className="border-b border-slate-50 hover:bg-slate-50/50">
-                  <td className="py-5 px-4 font-bold text-corporateBlue">QG-77402</td>
+                  <td className="py-5 px-4 font-bold text-corporateBlue">QG-55102</td>
+                  <td className="py-5 px-4 font-bold text-slate-900 leading-tight">Elena Rossi</td>
+                  <td className="py-5 px-4 text-slate-500 font-medium">e.rossi@qgtools.com</td>
+                  <td className="py-5 px-4 text-slate-700">Accounts Payable</td>
+                  <td className="py-5 px-4 text-slate-500"><span className="bg-slate-100 text-[10px] font-bold px-2 py-0.5 rounded">L6</span></td>
                   <td className="py-5 px-4">
-                    <div className="flex items-center gap-3">
-                      <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Sarah" className="w-10 h-10 rounded-full border border-slate-200 bg-amber-50" />
-                      <span className="font-bold text-slate-900 leading-tight">Sarah<br/>Jenkins</span>
-                    </div>
+                    <span className="bg-amber-50 text-amber-700 text-xs font-bold px-3 py-1 rounded-full border border-amber-100 uppercase tracking-wider">Tower Lead</span>
                   </td>
-                  <td className="py-5 px-4 text-slate-500 font-medium">s.jenkins@qgtools.com</td>
-                  <td className="py-5 px-4 text-slate-700">QG<br/>Global</td>
-                  <td className="py-5 px-4 text-slate-500">
-                    <span className="bg-slate-100 text-[10px] font-bold px-2 py-0.5 rounded border border-slate-200">L5</span>
-                  </td>
-                  <td className="py-5 px-4">
-                    <span className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full border border-slate-200 tracking-wide">Employee</span>
-                  </td>
-                  <td className="py-5 px-4">
-                    <div className="flex items-center gap-2">
-                       <div className="w-8 h-4 bg-green-100 border border-green-200 rounded-full relative mr-1 shadow-inner flex items-center">
-                         <div className="w-3 h-3 bg-green-600 rounded-full absolute right-0.5 pointer-events-none"></div>
-                       </div>
-                       <span className="text-[10px] font-extrabold text-green-700 tracking-widest">ACTIVE</span>
-                    </div>
-                  </td>
+                  <td className="py-5 px-4 text-[10px] font-extrabold text-green-700 tracking-widest uppercase">Active</td>
                 </tr>
 
-                {/* Row 3 */}
+                {/* Supervisor Row */}
+                <tr className="border-b border-slate-50 hover:bg-slate-50/50">
+                  <td className="py-5 px-4 font-bold text-corporateBlue">QG-33921</td>
+                  <td className="py-5 px-4 font-bold text-slate-900 leading-tight">Rajesh Kumar</td>
+                  <td className="py-5 px-4 text-slate-500 font-medium">r.kumar@qgtools.com</td>
+                  <td className="py-5 px-4 text-slate-700">Taxation Unit</td>
+                  <td className="py-5 px-4 text-slate-500"><span className="bg-slate-100 text-[10px] font-bold px-2 py-0.5 rounded">L5</span></td>
+                  <td className="py-5 px-4">
+                    <span className="bg-purple-50 text-purple-700 text-xs font-bold px-3 py-1 rounded-full border border-purple-100 uppercase tracking-wider">Supervisor</span>
+                  </td>
+                  <td className="py-5 px-4 text-[10px] font-extrabold text-green-700 tracking-widest uppercase">Active</td>
+                </tr>
+
+                {/* Employee Row */}
                 <tr className="border-b border-transparent hover:bg-slate-50/50">
-                  <td className="py-5 px-4 font-bold text-corporateBlue">QG-11094</td>
+                  <td className="py-5 px-4 font-bold text-corporateBlue">QG-77402</td>
+                  <td className="py-5 px-4 font-bold text-slate-900 leading-tight">Sarah Jenkins</td>
+                  <td className="py-5 px-4 text-slate-500 font-medium">s.jenkins@qgtools.com</td>
+                  <td className="py-5 px-4 text-slate-700">General Ledger</td>
+                  <td className="py-5 px-4 text-slate-500"><span className="bg-slate-100 text-[10px] font-bold px-2 py-0.5 rounded">L2</span></td>
                   <td className="py-5 px-4">
-                    <div className="flex items-center gap-3 opacity-60">
-                      <img src="https://api.dicebear.com/7.x/notionists/svg?seed=David" className="w-10 h-10 rounded-full border border-slate-200 bg-slate-200" />
-                      <span className="font-bold text-slate-900 leading-tight">David<br/>Miller</span>
-                    </div>
+                    <span className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full border border-slate-200 uppercase tracking-wider">Employee</span>
                   </td>
-                  <td className="py-5 px-4 text-slate-400 font-medium opacity-80">d.miller@qgtools.com</td>
-                  <td className="py-5 px-4 text-slate-400 opacity-80">Internal<br/>Ops</td>
-                  <td className="py-5 px-4 text-slate-400 opacity-80">
-                    <span className="bg-slate-50 text-[10px] font-bold px-2 py-0.5 rounded border border-slate-100">L3</span>
-                  </td>
-                  <td className="py-5 px-4 opacity-80">
-                    <span className="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-full border border-slate-200 tracking-wide">Employee</span>
-                  </td>
-                  <td className="py-5 px-4">
-                    <div className="flex items-center gap-2 opacity-60">
-                       <div className="w-8 h-4 bg-slate-200 border border-slate-300 rounded-full relative mr-1 shadow-inner flex items-center">
-                         <div className="w-3 h-3 bg-slate-400 rounded-full absolute left-0.5 pointer-events-none"></div>
-                       </div>
-                       <span className="text-[10px] font-extrabold text-slate-400 tracking-widest">INACTIVE</span>
-                    </div>
-                  </td>
+                  <td className="py-5 px-4 text-[10px] font-extrabold text-green-700 tracking-widest uppercase">Active</td>
                 </tr>
 
               </tbody>
@@ -258,8 +233,10 @@ export function AdminUsers() {
                   <label className="text-[10px] font-extrabold text-slate-500 tracking-widest uppercase mb-2 block">Role</label>
                   <div className="relative">
                     <select className="w-full bg-white border border-transparent focus:border-corporateBlue outline-none p-3 rounded-lg text-sm shadow-sm font-medium appearance-none">
-                      <option>Employee</option>
                       <option>Admin</option>
+                      <option>Supervisor</option>
+                      <option>Tower Lead</option>
+                      <option>Employee</option>
                     </select>
                     <ChevronDown size={14} className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
                   </div>

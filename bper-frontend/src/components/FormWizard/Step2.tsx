@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { ArrowLeft, ArrowRight, Plus, Trash2, Box } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ArrowLeft, ArrowRight, Plus, Trash2, Box, Settings2, HelpCircle } from "lucide-react";
 
 interface StepProps {
   onNext: () => void;
@@ -33,9 +33,21 @@ export function Step2({ onNext, onPrev }: StepProps) {
     { id: 1, description: '', hrs: 0 }
   ]);
 
+  const [standardHours, setStandardHours] = useState<number>(160);
+  const [isEditingStd, setIsEditingStd] = useState(false);
+
+  useEffect(() => {
+    // Fetch standard hours from API
+    // fetch("/api/eper/settings/standardHours")
+    //   .then(res => res.json())
+    //   .then(data => setStandardHours(data.value || 160))
+    //   .catch(() => setStandardHours(160));
+  }, []);
+
   const totalProcessHours = processRows.reduce((acc, row) => acc + (row.hrs || 0), 0);
   const totalMiscHours = miscRows.reduce((acc, row) => acc + (row.hrs || 0), 0);
   const aggregateMonthlyEffort = totalProcessHours + totalMiscHours;
+  const utilization = standardHours > 0 ? (aggregateMonthlyEffort / standardHours) * 100 : 0;
 
   const addProcessRow = () => {
     setProcessRows([...processRows, { id: Date.now(), majorProcess: 'Select...', process: 'Select...', subProcess: 'Select...', frequency: 'Daily', vol: 0, hrs: 0, appUsed: '' }]);
@@ -246,10 +258,48 @@ export function Step2({ onNext, onPrev }: StepProps) {
           </div>
         </div>
 
-        <div className="flex-1 px-8">
+        <div className="flex-1 px-8 flex items-center gap-6">
            <div className="bg-emerald-50 border border-emerald-100 text-emerald-700 px-4 py-2 rounded-full inline-flex items-center gap-2">
              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
              <span className="text-[10px] font-extrabold uppercase tracking-widest">Live Calculation Active</span>
+           </div>
+
+           <div className="flex flex-col items-center border-l border-slate-100 pl-6">
+              <p className="text-[9px] font-extrabold text-slate-400 uppercase tracking-[0.15em] mb-1">Utilization Score</p>
+              <div className={`text-xl font-black ${utilization > 100 ? 'text-amber-500' : utilization > 80 ? 'text-emerald-600' : 'text-slate-400'}`}>
+                {utilization.toFixed(1)}%
+              </div>
+           </div>
+
+           <div className="flex flex-col items-start border-l border-slate-100 pl-6 group relative">
+              <div className="flex items-center gap-2 mb-0.5">
+                <p className="text-[9px] font-extrabold text-slate-400 uppercase tracking-[0.15em]">Standard Hours</p>
+                <HelpCircle size={10} className="text-slate-300" />
+              </div>
+              <div className="flex items-center gap-2">
+                {isEditingStd ? (
+                  <input 
+                    type="number"
+                    autoFocus
+                    className="w-16 bg-slate-50 border border-slate-300 rounded text-sm font-bold text-slate-900 px-1 py-0.5 outline-none focus:border-corporateBlue"
+                    value={standardHours}
+                    onChange={(e) => setStandardHours(Number(e.target.value))}
+                    onBlur={() => setIsEditingStd(false)}
+                    onKeyDown={(e) => e.key === 'Enter' && setIsEditingStd(false)}
+                  />
+                ) : (
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-bold text-slate-600">{standardHours} hrs</span>
+                    <button 
+                      onClick={() => setIsEditingStd(true)}
+                      className="text-slate-300 hover:text-corporateBlue transition-colors"
+                      title="Edit Standard Hours (Admin Only)"
+                    >
+                      <Settings2 size={12} />
+                    </button>
+                  </div>
+                )}
+              </div>
            </div>
         </div>
 

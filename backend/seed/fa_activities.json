@@ -1,0 +1,101 @@
+{
+  "towers": [
+    {
+      "name": "Accounts Payable",
+      "processes": [
+        {
+          "name": "Invoice Processing",
+          "activities": [
+            "Invoice Receipt and Logging",
+            "Three-Way Match Verification",
+            "Invoice Coding and Routing",
+            "Payment Run Preparation",
+            "Vendor Query Resolution",
+            "Duplicate Invoice Check"
+          ]
+        },
+        {
+          "name": "Vendor Management",
+          "activities": [
+            "Vendor Onboarding",
+            "Vendor Master Data Maintenance",
+            "Statement of Account Reconciliation",
+            "Vendor Correspondence"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Accounts Receivable",
+      "processes": [
+        {
+          "name": "Cash Application",
+          "activities": [
+            "Payment Receipt Posting",
+            "Bank Reconciliation",
+            "Unapplied Cash Management",
+            "Remittance Processing"
+          ]
+        },
+        {
+          "name": "Collections",
+          "activities": [
+            "Dunning Letter Preparation",
+            "Customer Dispute Management",
+            "Aging Report Analysis",
+            "Credit Note Issuance",
+            "Bad Debt Write-off"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Record to Report",
+      "processes": [
+        {
+          "name": "General Ledger",
+          "activities": [
+            "Journal Entry Preparation",
+            "Intercompany Reconciliation",
+            "Month-End Close Activities",
+            "Trial Balance Preparation",
+            "Variance Analysis"
+          ]
+        },
+        {
+          "name": "Financial Reporting",
+          "activities": [
+            "P&L Statement Preparation",
+            "Balance Sheet Preparation",
+            "Cash Flow Statement",
+            "Management Reporting",
+            "Regulatory Compliance Reporting"
+          ]
+        },
+        {
+          "name": "Fixed Assets",
+          "activities": [
+            "Asset Capitalization",
+            "Depreciation Run",
+            "Asset Transfer and Retirement",
+            "Physical Verification"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Treasury",
+      "processes": [
+        {
+          "name": "Cash Management",
+          "activities": [
+            "Daily Cash Position Reporting",
+            "Fund Transfer Processing",
+            "Bank Account Reconciliation",
+            "Forex Transaction Management"
+          ]
+        }
+      ]
+    }
+  ]
+}
