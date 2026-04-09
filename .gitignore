@@ -1,0 +1,7 @@
+node_modules
+.env
+.DS_Store
+dist
+bper-frontend/node_modules
+bper-frontend/dist
+*.log

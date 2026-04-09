@@ -1,0 +1,94 @@
+{
+  "towers": [
+    {
+      "name": "Talent Acquisition",
+      "processes": [
+        {
+          "name": "Recruitment",
+          "activities": [
+            "Job Description Preparation",
+            "Job Posting on Portals",
+            "Resume Screening",
+            "Interview Scheduling",
+            "Offer Letter Generation",
+            "Background Verification"
+          ]
+        },
+        {
+          "name": "Onboarding",
+          "activities": [
+            "Induction Planning",
+            "Document Collection",
+            "IT Asset Allocation",
+            "ID Card and Access Setup",
+            "Joining Formalities"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HR Operations",
+      "processes": [
+        {
+          "name": "Payroll Management",
+          "activities": [
+            "Monthly Payroll Processing",
+            "Salary Revision Updates",
+            "Overtime Calculation",
+            "Deductions Management",
+            "Payslip Distribution"
+          ]
+        },
+        {
+          "name": "Leave & Attendance",
+          "activities": [
+            "Leave Application Processing",
+            "Attendance Reconciliation",
+            "Holiday Calendar Maintenance",
+            "Shift Roster Management"
+          ]
+        },
+        {
+          "name": "Employee Records",
+          "activities": [
+            "Employee Data Management",
+            "Promotion & Transfer Updates",
+            "Exit Formalities",
+            "Experience Certificate Issuance",
+            "HRIS Data Entry"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Learning & Development",
+      "processes": [
+        {
+          "name": "Training Coordination",
+          "activities": [
+            "Training Needs Identification",
+            "Training Calendar Planning",
+            "Trainer Coordination",
+            "Training Effectiveness Evaluation",
+            "Certification Tracking"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Performance Management",
+      "processes": [
+        {
+          "name": "Appraisal Cycle",
+          "activities": [
+            "KRA/KPI Setting",
+            "Mid-Year Review",
+            "Annual Appraisal Processing",
+            "Increment Letter Preparation",
+            "Performance Improvement Plan (PIP)"
+          ]
+        }
+      ]
+    }
+  ]
+}
